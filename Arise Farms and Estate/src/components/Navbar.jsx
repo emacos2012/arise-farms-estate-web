@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartCount, setIsCartOpen } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -35,6 +37,11 @@ function Navbar() {
           <li><a href="#services" onClick={() => scrollToSection('services')}>Services</a></li>
           <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
         </ul>
+
+        <button className="cart-icon-btn" onClick={() => setIsCartOpen(true)} aria-label="Open cart">
+          <span className="cart-icon">🛒</span>
+          {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+        </button>
       </div>
     </nav>
   );

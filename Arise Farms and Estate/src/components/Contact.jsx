@@ -295,6 +295,27 @@ function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Newsletter Section */}
+        <div className="newsletter-section">
+          <div className="newsletter-content">
+            <div className="newsletter-icon">📧</div>
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get the latest updates on farm fresh products, special offers, and farming tips delivered to your inbox.</p>
+            <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing!'); }}>
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                required 
+                className="newsletter-input"
+              />
+              <button type="submit" className="newsletter-btn">
+                Subscribe
+              </button>
+            </form>
+            <p className="newsletter-note">🔒 We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
