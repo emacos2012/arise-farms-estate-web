@@ -20,6 +20,7 @@
 - [x] 3.2 Pi payment functionality added
 
 ## Phase 4: GitHub Deployment - IN PROGRESS
+- [x] 4.0 Fix Vercel build error (created vercel.json configuration)
 - [ ] 4.1 Initialize Git (if not done)
 - [ ] 4.2 Create .gitignore
 - [ ] 4.3 Commit all changes
