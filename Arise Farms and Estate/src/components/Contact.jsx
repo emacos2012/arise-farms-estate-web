@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import './Contact.css';
 
+// Pi Wallet Address for payments
+const PI_WALLET_ADDRESS = 'GAARMYP5WMGPXHHLB4TXACOU6OUK2HYZKKWGS3NZAU5FEVF6RFJROREG';
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +15,7 @@ function Contact() {
   const [paymentAmount, setPaymentAmount] = useState(1);
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -32,6 +36,35 @@ function Contact() {
     });
   };
 
+  // Pi Network API Key
+  const PI_API_KEY = 'd2ikzreiaymhuj8sz3cuwm3f7vc8ayxwvsmeezuqyfgyw8wvxqbza7edtwbfsn8n';
+
+  // Initialize Pi SDK with API key
+  const initializePiSDK = async () => {
+    if (window.Pi && window.Pi.init) {
+      try {
+        await window.Pi.init(PI_API_KEY);
+        console.log('Pi SDK initialized successfully');
+        return true;
+      } catch (error) {
+        console.error('Failed to initialize Pi SDK:', error);
+        return false;
+      }
+    }
+    return false;
+  };
+
+  // Copy wallet address to clipboard
+  const copyWalletAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(PI_WALLET_ADDRESS);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
   // Pi Payment Integration
   const initiatePiPayment = async () => {
     setIsProcessing(true);
@@ -40,13 +73,20 @@ function Contact() {
     try {
       // Check if Pi SDK is available
       if (window.Pi) {
+        // Initialize Pi SDK with API key
+        const initialized = await initializePiSDK();
+        
+        if (!initialized) {
+          throw new Error('Failed to initialize Pi SDK');
+        }
+        
         const pi = window.Pi;
         
-      // Authenticate user (Pi SDK authentication)
-      // Note: In production, you'd use the authenticated user's info
-      await pi.authenticate({
-        scopes: ['payments']
-      });
+        // Authenticate user (Pi SDK authentication)
+        // Note: In production, you'd use the authenticated user's info
+        await pi.authenticate({
+          scopes: ['payments']
+        });
         
         // Create payment
         const payment = await pi.createPayment({
@@ -230,6 +270,22 @@ function Contact() {
                     ✗ Payment Failed. Please try again.
                   </div>
                 )}
+              </div>
+              
+              {/* Pi Wallet Address Display */}
+              <div className="wallet-address-section">
+                <h4>🔵 Payment Wallet Address</h4>
+                <p className="wallet-instruction">Send Pi payments to this address:</p>
+                <div className="wallet-address-display">
+                  <code className="wallet-address">{PI_WALLET_ADDRESS}</code>
+                  <button 
+                    className="btn-copy" 
+                    onClick={copyWalletAddress}
+                    title="Copy to clipboard"
+                  >
+                    {copied ? '✓ Copied' : '📋 Copy'}
+                  </button>
+                </div>
               </div>
               
               <div className="pi-info">

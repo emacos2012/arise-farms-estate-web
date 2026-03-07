@@ -9,7 +9,7 @@ function Products() {
       category: 'Vegetables',
       price: 0.50,
       unit: 'kg',
-      image: '🥬',
+      image: '/layout.jpeg.png',
       description: 'Fresh organic vegetables directly from our farm'
     },
     {
@@ -18,7 +18,7 @@ function Products() {
       category: 'Fruits',
       price: 1.00,
       unit: 'kg',
-      image: '🍎',
+      image: '/livestock.png',
       description: 'Juicy, ripe fruits grown naturally'
     },
     {
@@ -27,7 +27,7 @@ function Products() {
       category: 'Livestock',
       price: 5.00,
       unit: 'dozen',
-      image: '🥚',
+      image: '/drone.jpeg.png',
       description: 'Fresh eggs from free-range hens'
     },
     {
@@ -36,7 +36,7 @@ function Products() {
       category: 'Products',
       price: 15.00,
       unit: 'jar',
-      image: '🍯',
+      image: '/layout.jpeg.png',
       description: 'Pure, raw honey from our apiaries'
     },
     {
@@ -45,7 +45,7 @@ function Products() {
       category: 'Dairy',
       price: 3.00,
       unit: 'liter',
-      image: '🥛',
+      image: '/livestock.png',
       description: 'Fresh, unpasteurized milk from our cows'
     },
     {
@@ -54,7 +54,7 @@ function Products() {
       category: 'Grains',
       price: 2.00,
       unit: 'kg',
-      image: '🌾',
+      image: '/mainiamge.jpg.png',
       description: 'Premium quality wheat and rice'
     }
   ]);
@@ -74,7 +74,7 @@ function Products() {
           {products.map((product) => (
             <div key={product.id} className="product-card">
               <div className="product-image">
-                <span className="product-emoji">{product.image}</span>
+                <img src={product.image} alt={product.name} className="product-img" />
                 <span className="product-category">{product.category}</span>
               </div>
               <div className="product-info">

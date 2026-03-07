@@ -47,10 +47,7 @@ function About() {
         </div>
         <div className="about-visual">
           <div className="about-image-container">
-            <div className="about-image-placeholder">
-              <span className="placeholder-icon">🌾</span>
-              <span className="placeholder-text">Our Farm</span>
-            </div>
+            <img src="/layout.jpeg.png" alt="Our Farm" className="about-image" />
           </div>
           <div className="about-decoration"></div>
         </div>

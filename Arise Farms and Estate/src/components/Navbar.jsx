@@ -20,7 +20,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span className="logo-icon">🌾</span>
+          <img src="/farmsarise.png" alt="Arise Farms Logo" className="logo-image" />
           <span className="logo-text">Arise Farms</span>
         </div>
         
