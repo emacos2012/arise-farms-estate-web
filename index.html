@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Arise Farms and Estate Management - Your trusted source for fresh farm produce and agricultural products. We specialize in sustainable farming and premium agricultural solutions." />
+    <meta name="keywords" content="farm, agriculture, organic produce, farm products, agricultural services, sustainable farming" />
+    <meta name="author" content="Arise Farms and Estate Management" />
+    <meta property="og:title" content="Arise Farms and Estate Management" />
+    <meta property="og:description" content="Your trusted source for fresh farm produce and agricultural products" />
+    <meta property="og:type" content="website" />
+    <title>Arise Farms and Estate Management</title>
+    <!-- Pi Network SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/pi-lib@latest/dist/pI_Node_Browser_SDK.min.js"></script>
+    <script>
+      // Initialize Pi Network with your API key
+      window.Pi = window.Pi || { 
+        init: function(apiKey) { 
+          window.piApiKey = apiKey;
+          console.log('Pi Network initialized with API key:', apiKey);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
