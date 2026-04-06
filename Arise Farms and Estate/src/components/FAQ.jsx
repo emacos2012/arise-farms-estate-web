@@ -19,7 +19,7 @@ function FAQ() {
     },
     {
       question: 'What payment methods do you accept?',
-      answer: 'We accept multiple payment methods including Pi Network cryptocurrency, credit/debit cards, bank transfers, and cash on delivery. For bulk orders, we also offer NET 30 payment terms for qualifying businesses.'
+      answer: 'We accept only one payment method "Pi Network cryptocurrency".'
     },
     {
       question: 'Do you offer wholesale pricing?',

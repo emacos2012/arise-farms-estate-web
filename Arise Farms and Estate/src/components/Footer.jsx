@@ -10,7 +10,7 @@ function Footer() {
           <div className="footer-brand">
             <div className="footer-logo">
               <span className="logo-icon">🌾</span>
-              <span className="logo-text">Arise Farms</span>
+              <span className="logo-text">Arise Farms and Estate Management</span>
             </div>
             <p className="footer-description">
               Your trusted source for fresh, organic farm products. 
@@ -67,7 +67,6 @@ function Footer() {
           </div>
           <div className="footer-payments">
             <span className="payment-label">Accepted Payments:</span>
-            <span className="payment-icon">💳</span>
             <span className="payment-icon">🔵 Pi Network</span>
           </div>
           <div className="footer-legal">

@@ -16,10 +16,7 @@ function About() {
             we offer is fresh, nutritious, and environmentally responsible.
           </p>
           <p className="about-description">
-            With over 10 years of experience in the agricultural industry, we have 
-            built a reputation for excellence in farming, product quality, and 
-            customer satisfaction. Our team of dedicated farmers and agricultural 
-            experts work tirelessly to bring you the best that nature has to offer.
+            
           </p>
           <div className="about-features">
             <div className="feature-item">

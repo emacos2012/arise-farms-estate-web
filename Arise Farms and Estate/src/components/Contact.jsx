@@ -132,21 +132,21 @@ function Contact() {
               <div className="info-icon">📍</div>
               <div className="info-content">
                 <h4>Farm Location</h4>
-                <p>123 Agricultural Road<br />Rural District, State<br />Country</p>
+                <p>17 Shoniake Street, Off Jimoh Balogun<br />Lagos State,<br />Nigeria.</p>
               </div>
             </div>
             <div className="info-card">
               <div className="info-icon">📞</div>
               <div className="info-content">
                 <h4>Phone</h4>
-                <p>+1 (234) 567-890<br />+1 (234) 567-891</p>
+                <p>+234 70-339-668-30<br /></p>
               </div>
             </div>
             <div className="info-card">
               <div className="info-icon">✉️</div>
               <div className="info-content">
                 <h4>Email</h4>
-                <p>info@arisefarms.com<br />sales@arisefarms.com</p>
+                <p>arisefarmsandestatecontact@gmail.com<br />arisefarmsandestatedispute@gmail.com</p>
               </div>
             </div>
             <div className="info-card">
